@@ -1,13 +1,30 @@
-// swift-tools-version:5.9
+// swift-tools-version:6.0
 import PackageDescription
 
 let package = Package(
-	name: "SwiftPackage",
+	name: "keychain",
+	platforms: [
+		.iOS(.v16),
+		.macOS(.v13),
+		.tvOS(.v16),
+		.visionOS(.v1),
+		.watchOS(.v9)
+	],
 	products: [
-		.library(name: "SwiftPackage", targets: ["SwiftPackage"])
+		.library(name: "Keychain", targets: ["Keychain"])
+	],
+	dependencies: [
+		.package(url: "https://github.com/pointfreeco/swift-dependencies", from: "1.9.1"),
+		.package(url: "https://github.com/square/Valet", from: "5.0.0")
 	],
 	targets: [
-		.target(name: "SwiftPackage"),
-		.testTarget(name: "SwiftPackageTests", dependencies: ["SwiftPackage"])
+		.target(
+			name: "Keychain",
+			dependencies: [
+				.product(name: "Dependencies", package: "swift-dependencies"),
+				.product(name: "Valet", package: "Valet")
+			]
+		),
+		.testTarget(name: "KeychainTests", dependencies: ["Keychain"])
 	]
 )
