@@ -1,5 +1,5 @@
-@testable import Keychain
 import Dependencies
+@testable import Keychain
 import XCTest
 
 class KeychainTests: XCTestCase {
@@ -13,7 +13,7 @@ class KeychainTests: XCTestCase {
 			try keychain.save(key: "key", value: "test")
 			XCTAssertEqual(try keychain.load(key: "key"), "test")
 			try keychain.delete(key: "key")
-			XCTAssertEqual(try? keychain.load(key: "key"), Optional<String>.none)
+			XCTAssertThrowsError(try { let _: String = try keychain.load(key: "key") }())
 		}
 	}
 

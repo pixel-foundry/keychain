@@ -81,6 +81,10 @@ extension ValetKeychain: Keychain {
 		try valet().removeObject(forKey: key)
 	}
 
+	func allKeys() throws -> Set<String> {
+		try valet().allKeys()
+	}
+
 }
 
 extension KeychainConfiguration.Accessibility {

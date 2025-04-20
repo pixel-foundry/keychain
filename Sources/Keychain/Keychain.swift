@@ -10,4 +10,6 @@ public protocol Keychain: Sendable {
 
 	func delete(key: String) throws
 
+	func allKeys() throws -> Set<String>
+
 }
