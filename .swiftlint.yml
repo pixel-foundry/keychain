@@ -1,11 +1,9 @@
 disabled_rules:
-  - closure_parameter_position
   - identifier_name
   - multiple_closures_with_trailing_closure
+  - todo
 opt_in_rules:
-  - attributes
   - closure_end_indentation
-  - closure_parameter_position
   - closure_spacing
   - contains_over_filter_count
   - contains_over_filter_is_empty
@@ -19,11 +17,9 @@ opt_in_rules:
   - first_where
   - flatmap_over_map_reduce
   - indentation_width
-  - legacy_random
   - literal_expression_end_indentation
   - lower_acl_than_parent
   - operator_usage_whitespace
-  - redundant_nil_coalescing
   - redundant_type_annotation
   - sorted_first_last
   - sorted_imports
@@ -35,8 +31,8 @@ opt_in_rules:
   - vertical_parameter_alignment_on_call
   - yoda_condition
 excluded:
-  - .build
-  - .swiftpm
+  - "**/.build/"
+  - "**/.swiftpm/"
 indentation_width:
   include_comments: false
   include_compiler_directives: false

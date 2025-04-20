@@ -1,0 +1,16 @@
+name: Code Quality
+
+on:
+  workflow_dispatch:
+  pull_request:
+
+jobs:
+  SwiftLint:
+    name: Swift files are formatted
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: SwiftLint
+        run: swiftlint --quiet --reporter github-actions-logging

@@ -1,7 +1,3 @@
-# Swift Package Repository Template
+# Keychain dependency
 
-This is a project template for Swift packages.
-
-* Sensible `.gitignore`
-* `.swiftlint.yml` for linting
-* `.editorconfig` enforcing tabs with a size of 2.
+Vends a [dependency](https://github.com/pointfreeco/swift-dependencies) for accessing the keychain
