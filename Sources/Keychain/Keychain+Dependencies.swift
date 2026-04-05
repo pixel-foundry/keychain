@@ -11,9 +11,6 @@ extension DependencyValues {
 }
 
 public enum KeychainDependencyKey: DependencyKey {
-	public static let liveValue: any Keychain = ValetKeychain()
-}
-
-extension KeychainDependencyKey: TestDependencyKey {
-	public static let testValue: any Keychain = InMemoryKeychain()
+	public static var liveValue: any Keychain { ValetKeychain() }
+	public static var testValue: any Keychain { InMemoryKeychain() }
 }

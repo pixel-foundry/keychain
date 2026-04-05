@@ -65,13 +65,11 @@ struct ValetKeychain {
 
 extension ValetKeychain: Keychain {
 
-	@inlinable
 	func load<T>(key: String) throws -> T where T: Decodable {
 		let data = try valet().object(forKey: key)
 		return try decoder.decode(T.self, from: data)
 	}
 
-	@inlinable
 	func save<T>(key: String, value: T) throws where T: Encodable {
 		let data = try encoder.encode(value)
 		try valet().setObject(data, forKey: key)
